@@ -1,0 +1,10 @@
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of list">
+        <button mat-icon-button color="primary" matListItemIcon (click)="addFavorite.emit(item)">
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <div matListItemTitle>{{item}}</div>
+    </mat-list-item>
+</mat-list>
+  
+  

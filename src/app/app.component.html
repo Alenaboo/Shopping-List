@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h1>
+   {{title}}!!
+  </h1>
+  <dream-product-list
+    #shoppingListCtrl
+    [list]="shoppingList"
+    (listChange)="shoppingList = $event; save()"
+    [favorites]="favoriteList"
+    (favoritesChange)="favoriteList = $event; save()"
+  ></dream-product-list>
+  <dream-favorite-list
+    [list]="favoriteList"
+    (addFavorite)="shoppingListCtrl.add($event)"
+  ></dream-favorite-list>
+</div>

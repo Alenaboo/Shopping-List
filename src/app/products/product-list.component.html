@@ -1,0 +1,31 @@
+<mat-form-field class="product-list-container" appearance="fill">
+	<mat-label>Lista {{title}}</mat-label>
+	<mat-chip-list #chipList aria-label="Fruit selection">
+	  	<mat-chip *ngFor="let item of list; index as idx" (removed)="remove(idx)">
+			<ng-container [ngSwitch]="favorites.includes(item.name)">
+				<button mat-icon-button color="primary" *ngSwitchDefault (click)="addToFavorites(item.name)">
+					<mat-icon>favorite_outlined</mat-icon>
+				</button>
+				<button mat-icon-button color="primary" *ngSwitchCase="true" (click)="removeFromFavorites(item.name)">
+					<mat-icon>favorite</mat-icon>
+				</button>
+			</ng-container>
+			{{item.name}}
+			<button mat-icon-button color="primary" (click)="setQty(item, -1)" [disabled]="item.qty <= 1">
+				<mat-icon>remove</mat-icon>
+			</button>
+			{{item.qty}}
+			<button mat-icon-button color="primary" (click)="setQty(item, 1)">
+				<mat-icon>add</mat-icon>
+			</button>
+			<button matChipRemove>
+				<mat-icon>cancel</mat-icon>
+			</button>
+	  	</mat-chip>
+		<input placeholder="Aggiungi nella lista..."
+			[matChipInputFor]="chipList"
+			[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+			[matChipInputAddOnBlur]="true"
+			(matChipInputTokenEnd)="onChipInput($event)">
+	</mat-chip-list>
+</mat-form-field>
