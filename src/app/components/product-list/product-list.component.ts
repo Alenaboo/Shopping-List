@@ -1,7 +1,7 @@
 import { ENTER, COMMA } from "@angular/cdk/keycodes";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { MatChipInputEvent } from "@angular/material/chips";
-import { IShoppingItem } from "../models/shopping-item.interface";
+import { IShoppingItem } from "../../models/shopping-item.interface";
 
 @Component({
     selector: 'dream-product-list',
