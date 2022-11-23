@@ -1,9 +1,12 @@
 <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let item of list">
+    <mat-list-item role="listitem" *ngFor="let item of list; index as idx">
         <button mat-icon-button color="primary" matListItemIcon (click)="addFavorite.emit(item)">
             <mat-icon>shopping_cart</mat-icon>
         </button>
         <div matListItemTitle>{{item}}</div>
+        <button mat-icon-button color="basic" matListItemIcon (click)="list.splice(idx, 1)">
+            <mat-icon>cancel</mat-icon>
+        </button>
     </mat-list-item>
 </mat-list>
   
