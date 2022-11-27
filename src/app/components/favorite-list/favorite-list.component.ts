@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     selector: 'dream-favorite-list',
-    templateUrl: './favorite-list.component.html'
+    templateUrl: './favorite-list.component.html',
+    styleUrls: ['./favorite-list.component.css']
 })
 export class FavoriteListComponent {
     @Input() list: string[] = [];

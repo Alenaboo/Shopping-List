@@ -1,6 +1,6 @@
 <mat-form-field class="product-list-container" appearance="fill">
-	<mat-label>Lista {{title}}</mat-label>
-	<mat-chip-list #chipList aria-label="Fruit selection">
+	<h3 class="product-list-title">Lista {{title}}</h3>
+	<mat-chip-list #chipList aria-label="Fruit selection" class="product-list">
 	  	<mat-chip *ngFor="let item of list; index as idx" (removed)="remove(idx)">
 			<ng-container [ngSwitch]="favorites.includes(item.name)">
 				<button mat-icon-button color="primary" *ngSwitchDefault (click)="addToFavorites(item.name)">
@@ -26,6 +26,8 @@
 			[matChipInputFor]="chipList"
 			[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
 			[matChipInputAddOnBlur]="true"
-			(matChipInputTokenEnd)="onChipInput($event)">
+			(matChipInputTokenEnd)="onChipInput($event)"
+			class="product-list-input"
+		>
 	</mat-chip-list>
 </mat-form-field>
