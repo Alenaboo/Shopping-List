@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     /**
      * @description titolo della pagina
      */
-    title = 'Angular: Getting Started';
+    title = 'La spesa intelligente';
 
     public shoppingList: IShoppingItem[] = [];
     public favoriteList: string[] = [];
